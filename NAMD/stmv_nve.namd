@@ -1,0 +1,62 @@
+#############################################################
+## ADJUSTABLE PARAMETERS                                   ##
+#############################################################
+seed 1
+structure          ../structure/stmv.psf
+coordinates        ../structure/stmv.pdb
+
+
+#############################################################
+## SIMULATION PARAMETERS                                   ##
+#############################################################
+
+# Input
+paraTypeCharmm	    on
+parameters          ../structure/par_all27_prot_na.inp
+temperature         300
+
+
+# Force-Field Parameters
+exclude             scaled1-4
+1-4scaling          1.0
+cutoff              12.
+switching           on
+switchdist          10.
+pairlistdist        13.5
+
+# constrain hydrogen atoms
+rigidbonds           all
+
+
+# Integrator Parameters
+timestep            2.0
+# nonbondedFreq       1
+fullElectFrequency  1
+
+
+# Constant Pressure Control (variable volume)
+useGroupPressure      yes ;# needed for rigidBonds
+useFlexibleCell       no
+useConstantArea       no
+
+cellBasisVector1     216.832    0.   0.
+cellBasisVector2     0.   216.832    0.
+cellBasisVector3     0.    0   216.832
+cellOrigin           0.    0.   0.
+
+PME                  on
+PMEGridSizeX         216
+PMEGridSizeY         216
+PMEGridSizeZ         216
+
+CUDASOAIntegrate on
+
+# Output
+outputName          stmv_nve
+
+outputEnergies      5000
+outputTiming        5000
+
+numsteps            50000
+
+
