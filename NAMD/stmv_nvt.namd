@@ -41,9 +41,9 @@ langevinHydrogen    on    ;# don't couple langevin bath to hydrogens
 
 
 # Constant Pressure Control (variable volume)
-useGroupPressure      yes ;# needed for rigidBonds
-useFlexibleCell       no
-useConstantArea       no
+# useGroupPressure      yes ;# needed for rigidBonds
+# useFlexibleCell       no
+# useConstantArea       no
 
 cellBasisVector1     216.832    0.   0.
 cellBasisVector2     0.   216.832    0.
