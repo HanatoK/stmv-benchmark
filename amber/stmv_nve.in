@@ -3,7 +3,7 @@ NVT_Equilibration
     imin=0,                 !No minimization
     ntx=1,                  !Read coordinates only
     irest=0,                !Do not restart from previous simulation
-    nstlim=100000,          !Number of steps
+    nstlim=50000,          !Number of steps
     dt=0.002,               !2fs timestep
     ntpr=5000,              !Print energies every 5000 steps
     nrespa=1,               !rRESPA is not supported in pmemd.cuda
