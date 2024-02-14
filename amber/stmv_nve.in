@@ -1,0 +1,25 @@
+NVT_Equilibration
+  &cntrl
+    imin=0,                 !No minimization
+    ntx=1,                  !Read coordinates only
+    irest=0,                !Do not restart from previous simulation
+    nstlim=100000,          !Number of steps
+    dt=0.002,               !2fs timestep
+    ntpr=5000,              !Print energies every 5000 steps
+    nrespa=1,               !rRESPA is not supported in pmemd.cuda
+    ntt=0,                  !Langevin dynamics
+    !temp0=300,              !Thermostat temperature
+    !gamma_ln=1.0,           !Friction coefficient
+    tempi=300,              !Initial temperature
+    ntp=0,                  !No barostat
+    ntc=2,                  !Covalent bonds involving hydrogen are constrained (SHAKE)
+    ntf=2,                  !Use in together with ntc=2
+    ntb=1,                  !Constant volume
+    cut=12.0,               !CHARMM force field cut-off
+    fswitch=10.0,           !Apply switching function at 10.0 angstroms
+  /
+  &ewald
+    nfft1=108,              !PME grids along X
+    nfft2=108,              !PME grids along Y
+    nfft3=80,               !PME girds along Z
+  /
